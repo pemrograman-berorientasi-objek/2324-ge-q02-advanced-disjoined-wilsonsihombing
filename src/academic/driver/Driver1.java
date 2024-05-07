@@ -313,7 +313,7 @@ public class Driver1 {
                 for (Enrollment E : enrollments) {
                     if (E.getId_student().equals(id_student_) && E.getYear().equals(year)) {
                         // System.out.println(id_student_+" " + odd + "/" + even);
-                        simpan[idxe] = id_student_+" " + odd + "/" + even;
+                        simpan[idxe] = id_student_+"|" + odd + "/" + even;
                         idxe++;
                     } 
                 } 
