@@ -28,6 +28,9 @@ public class Driver1 {
         ArrayList<CourseOpening> courseOpenings = new ArrayList<CourseOpening>();
         String[] simpan = new String[5];
         int idxe = 0;
+        for(int i = 0;i< 5;i++){
+            simpan[i] = "";
+        }
 
         
 
@@ -272,8 +275,7 @@ public class Driver1 {
 
                             int intial1 = Integer.parseInt(tempnim1.substring(7));
                             int intial2 = Integer.parseInt(tempnim2.substring(7));
-                            // System.out.println(intial1);
-                            // System.out.println(intial2);
+
                             if(intial1 % 2 == 0){
                                 index_akhir = i;
                             }else if(intial2 % 2 == 0){
@@ -285,22 +287,8 @@ public class Driver1 {
                     }
                 }
 
-
-
                 String id_student_ = temp_nim[index_akhir];
-                //System.out.println("--------id_student"  + id_student_ + temp_grade[index_akhir] + "/" + temp_grade[index_akhir]);
                 String new_grade = "";
-
-                for(int i = 0; i< enrollments.size();i++){
-                    if(enrollments.get(i).getId_student().equals(id_student_) && enrollments.get(i).getYear().equals(year) && enrollments.get(i).equals(semester)){
-                        System.out.println("masukk");
-                        for(int j = i+1; j<enrollments.size();j++){
-                            if(enrollments.get(i).getId_student().equals(enrollments.get(j).getId_student()) && enrollments.get(i).getYear().equals(enrollments.get(j).getYear()));
-                            new_grade = enrollments.get(i).getStatus() + "/" + enrollments.get(j).getStatus();
-                        }
-                        System.out.println(new_grade);
-                    }
-                }
                 String odd = "";
                 String even = "";
                 for(Enrollment E :enrollments){
@@ -310,9 +298,9 @@ public class Driver1 {
                         even = E.getStatus();
                     }
                 }
+
                 for (Enrollment E : enrollments) {
                     if (E.getId_student().equals(id_student_) && E.getYear().equals(year)&& E.getSemester().equals(semester)) {
-                        // System.out.println(id_student_+" " + odd + "/" + even);
                         simpan[idxe] = id_student_+"|" + odd + "/" + even;
                         idxe++;
                     } 
@@ -349,9 +337,6 @@ public class Driver1 {
 
         for(int i = 0;i < idxe ; i++){
             System.out.println(simpan[i]);
-            if(i ==1){
-                break;
-            }
         }
 
 
