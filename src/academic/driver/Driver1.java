@@ -304,14 +304,14 @@ public class Driver1 {
                 String odd = "";
                 String even = "";
                 for(Enrollment E :enrollments){
-                    if (E.getId_student().equals(id_student_) && E.getSemester().equals("odd")) {
+                    if (E.getId_student().equals(id_student_) && E.getSemester().equals("odd") && E.getYear().equals(year)) {
                         odd = E.getStatus();
-                    }else if (E.getId_student().equals(id_student_) && E.getSemester().equals("even")) {
+                    }else if (E.getId_student().equals(id_student_) && E.getSemester().equals("even") && E.getYear().equals(year)) {
                         even = E.getStatus();
                     }
                 }
                 for (Enrollment E : enrollments) {
-                    if (E.getId_student().equals(id_student_) && E.getYear().equals(year)) {
+                    if (E.getId_student().equals(id_student_) && E.getYear().equals(year)&& E.getSemester().equals(semester)) {
                         // System.out.println(id_student_+" " + odd + "/" + even);
                         simpan[idxe] = id_student_+"|" + odd + "/" + even;
                         idxe++;
